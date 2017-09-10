@@ -16,3 +16,16 @@ Convert to xml
 ```
 (Get-ChildItem C:\folder | ConvertTo-XML -NoTypeInformation).Save("C:\test.xml")
 ```
+
+
+### 4. Real Life Examples
+```
+$hostname = $env:computername
+$IPAddress = Get-NetIPAddress | Select IPAddress, AddressFamily
+$Path = "C:\in.xml"
+```
+
+```
+Get-Process | Export-Clixml proc.xml
+$Process = Import-Clixml proc.xml
+```
